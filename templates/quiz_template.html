@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+    <style>
+        body {
+            position: relative;
+            min-height: 100vh;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz</h1>
+    <form method="POST" action="/">
+        <!-- Question about the user's name -->
+        <h2>Soru 1: Adınız ve soyadınızı giriniz.</h2>
+        <input type="text" name="username">
+
+        <h2>Soru 2: Python'da bir AI modelini eğitmek için kullanılan popüler bir kütüphane hangisidir?</h2>
+        <input type="radio" name="question1" value="flask"> Flask<br>
+        <input type="radio" name="question1" value="tensorflow"> Tensorflow<br>
+        <input type="radio" name="question1" value="django"> Django<br>
+        <input type="radio" name="question1" value="react"> React<br>
+
+        <h2>Soru 3: Bilgisayar görüşünde, bir görüntünün özelliklerini çıkarmak için kullanılan yaygın bir teknik nedir?</h2>
+        <input type="radio" name="question2" value="cnn"> Convolutional Neural Networks (CNNs)<br>
+        <input type="radio" name="question2" value="rnn"> Recurrent Neural Networks (RNNs)<br>
+        <input type="radio" name="question2" value="dectre"> Decision Trees<br>
+        <input type="radio" name="question2" value="svm"> Support Vector Machines (SVMs)<br>
+
+        <h2>Soru 4: NLP'de, metinleri analiz etmek ve işlemek için kullanılan popüler bir Python kütüphanesi hangisidir?</h2>
+        <input type="radio" name="question3" value="numpy"> NumPy<br>
+        <input type="radio" name="question3" value="opencv"> OpenCV<br>
+        <input type="radio" name="question3" value="spacy"> spaCy<br>
+        <input type="radio" name="question3" value="matplotlib"> Matplotlib<br>
+
+        <!-- Third question with a text input -->
+        <h2>Soru 5: Bilgisayarlar bir fotoğraftaki köpeği nasıl tanır? Sizce bu süreçte hangi adımlar önemlidir?</h2>
+        <textarea name="question3" rows="4" cols="50"></textarea>
+
+        <br>
+        <input type="submit" value="Submit Answers">
+
+        <div style="position: absolute; top: 10px; right: 10px;">
+            <!-- {% if best_score %}
+                <p>En iyi skor: {{ best_score if best_score > 0 else "Henüz bir skor yok" }}</p>
+            
+            {% endif %} -->
+            {% if best_score is not none %}
+                <p>En iyi skor: {{ best_score }}</p>
+            {% else %}
+                <p>Henüz bir skor yok</p>
+            {% endif %}
+
+        </div>
+    </form>
+
+    <footer>
+        Betül Öğmen: Ankara Üniversitesi Bilgisayar Mühendisliği mezunu.
+    </footer>
+</body>
+</html>
